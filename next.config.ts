@@ -3,11 +3,10 @@ import type {NextConfig} from 'next';
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
-  output: isProd ? 'export' : undefined,
+  output: 'export',
   basePath: isProd ? '/footyformation' : '',
   images: {
-    loader: isProd ? 'custom' : undefined,
-    loaderFile: isProd ? './image-loader.js' : undefined,
+    unoptimized: true,
   },
   typescript: {
     ignoreBuildErrors: true,
